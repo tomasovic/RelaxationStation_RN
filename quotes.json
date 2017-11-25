@@ -1,0 +1,40 @@
+{
+  "quotes": [
+    {
+      "text":"This is quote number 1",
+      "source":"Source 1"
+    },
+    {
+      "text":"This is quote number 2",
+      "source":"Source 2"
+    },
+    {
+      "text":"This is quote number 3",
+      "source":"Source 3"
+    },
+    {
+      "text":"This is quote number 4",
+      "source":"Source 4"
+    },
+    {
+      "text":"This is quote number 5",
+      "source":"Source 5"
+    },
+    {
+      "text":"This is quote number 6",
+      "source":"Source 6"
+    },
+    {
+      "text":"This is quote number 7",
+      "source":"Source 7"
+    },
+    {
+      "text":"This is quote number 8",
+      "source":"Source 8"
+    },
+    {
+      "text":"This is quote number 9",
+      "source":"Source 9"
+    }
+  ]
+}
