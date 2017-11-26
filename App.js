@@ -70,7 +70,7 @@ export default class App extends Component<{}> {
             <TouchableOpacity style={styles.button} onPress={()=> { alert("I am pressed!") }}>
               <Image source={zenImage} style={styles.buttonImage} />
             {/* <Button title="Go to Home Screen" onPress={()=>{}} /> */}
-            <QuoteScreen quoteText={quote.text} quoteSource={quote.source} onNextQuotePress={this._incrementQuoteIndex}  />
+            <QuoteScreen quoteText={quote.text} quoteSource={quote.source} onNextQuotePress={this._incrementQuoteIndex} qId={this.state.quoteIndex}  />
             </TouchableOpacity>
         </View>
         </View>
