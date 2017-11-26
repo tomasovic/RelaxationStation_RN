@@ -12,6 +12,7 @@ import QuoteScreen from './QuoteScreen'
 import HomeScreen from './HomeScreen'
 import { StackNavigator } from 'react-navigation'
 
+
 const zenImage = require('./assets/zen.png');
 const bgImage = require('./assets/bg.png');
 
@@ -32,12 +33,36 @@ const instructions = Platform.select({
 });
 
 export default class App extends Component<{}> {
+  constructor(props) {
+    super(props)
+
+    this.state = {
+      quoteIndex: 2
+    }
+
+    this._incrementQuoteIndex = this._incrementQuoteIndex.bind(this)
+  }
+
+  _incrementQuoteIndex() {
+    let newIndex
+
+    if (this.state.quoteIndex + 1 === quotes.length) {
+      newIndex = 0
+    }else {
+      newIndex = this.state.quoteIndex + 1
+    }
+
+    this.setState({
+      quoteIndex: newIndex
+    })
+  }
+
   static navigationOptions = {
     title: 'First Screen'
   }
   render() {
     // taking one quote from quotes.json
-    const quote = quotes[0]
+    const quote = quotes[this.state.quoteIndex]
     return (
         <View style={styles.container}>
           <Image source={bgImage}/>
@@ -45,7 +70,7 @@ export default class App extends Component<{}> {
             <TouchableOpacity style={styles.button} onPress={()=> { alert("I am pressed!") }}>
               <Image source={zenImage} style={styles.buttonImage} />
             {/* <Button title="Go to Home Screen" onPress={()=>{}} /> */}
-            <QuoteScreen quoteText={quote.text} quoteSource={quote.source} />
+            <QuoteScreen quoteText={quote.text} quoteSource={quote.source} onNextQuotePress={this._incrementQuoteIndex}  />
             </TouchableOpacity>
         </View>
         </View>

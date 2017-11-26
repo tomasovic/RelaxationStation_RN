@@ -6,7 +6,7 @@ import {
   StyleSheet,
   Image
 } from 'react-native';
-
+import NextQuoteButton from './NextQuoteButton'
 
 
 export default class QuoteScreen extends Component {
@@ -17,6 +17,7 @@ export default class QuoteScreen extends Component {
       <View>
         <Text style={styles.text}>{quoteText}</Text>
         <Text style={styles.text}>{quoteSource}</Text>
+        <NextQuoteButton onPress={this.props.onNextQuotePress} />
       </View>
     )
   }
@@ -24,7 +25,8 @@ export default class QuoteScreen extends Component {
 
 QuoteScreen.propTypes = {
    quoteText: PropTypes.string.isRequired,
-   quoteSource: PropTypes.string.isRequired
+   quoteSource: PropTypes.string.isRequired,
+   onNextQuotePress: PropTypes.func.isRequired
 }
 
 const styles = StyleSheet.create({
